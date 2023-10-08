@@ -258,6 +258,9 @@ the items which signed * means it was updated by me and needs to be checked agai
 |setTotalMass ( float )||
 |get_m_nodes()|获取布料的所有粒子节点，结果为一个数组，数组对象可以用.at(i)进行访问|  
 ## 18、btSoftBody粒子节点方法
+|  ||
+|:--|:--|
+|方法|含义|
 |at( int )|访问某个编号的粒子节点|
 |get_m_x()|获取某个布料粒子节点的位置|
 |get_m_n()|获取某个布料粒子节点的法向|
