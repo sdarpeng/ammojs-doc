@@ -88,6 +88,7 @@ forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html
 |getNumCollisionObjects()|获取物理世界中碰撞物体的数量|
 |getCollisionObjectArray()|获取物理世界中碰撞物体的数组|
 |contactTest ( btCollisionObject colObj, ContactResultCallback resultCallback)|进行接触检测，colObj为指向碰撞物体类的引用，resultCallback为接触回调类的对象|
+|getDispatcher()|获取物理世界的事件|
 ## 5. btDiscreteDynamicsWorld类：离散物理世界类
 实际开发中常使用该类来创建物理世界对象，创建时要使用构造器，需要给出碰撞检测算法分配器、碰撞检测粗测算法接口和碰撞检测配置接口。
 |  ||
@@ -350,8 +351,10 @@ forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html
 |*btCollisionObjectWrapper||
 |*wrapPointer||
 |*getManifoldByIndexInternal( index )||
-|*getDispatcher||
-|*getNumManifolds||
-|*getNumContacts||
-|*getContactPoint||
-|*getDistance||
+|*getBody0()|返回参与碰撞的第1个对象|
+|*getBody1()|返回参与碰撞的第2个对象|
+|*getDispatcher()|获取物理世界的事件|
+|*getNumManifolds()|获取物理世界的多歧事件|
+|*getNumContacts()|获取物理世界多歧事件中的接触（碰撞）事件数量|
+|*getContactPoint()|获取上一条接触（碰撞）事件的碰撞点|
+|*getDistance()|获取上一条碰撞点的距离|
