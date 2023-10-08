@@ -42,6 +42,7 @@ the items which signed * means it was updated by me and needs to be checked agai
 |getRotation()|换取表示旋转信息的四元数|
 |getBasic()|换取表示变换信息的3x3矩阵|
 |setFromOpenGLMatrix(m)|设置变换的矩阵，m为旋转平移缩放向量合成的4x4变换矩阵首地址|
+|setEulerZYX( float, float, float )|设置欧拉变换|
 |btQuaternion类表示的四元数，用于对三维向量进行变换。||
 ## 3. btRigidBody类：刚体类
 该类用于存储刚体的一些属性信息，包括线速度、角速度、摩擦系数等，其中封装了多种方法，用于设置和获取相关属性信息。
@@ -68,6 +69,8 @@ the items which signed * means it was updated by me and needs to be checked agai
 |setLinearVelocity( btVector3 )|设置线性速度|
 |setAngularVelocity( btVector3 )|设置角速度|
 |setContactProcessingThreshold( float)|设置接触（碰撞）检测阈值，一般会设的很大，例如100,000,000|
+|*setDeactivationTime( float )|设置不活跃时长|
+|*setSleepingThresholds( float, float )|设置睡眠阈值|
 |*setFriction( float factor)| 设置摩擦力|
 |*setRollingFriction( float factor)|设置滚动摩擦力|
 |*setActivationState( stateIndex default: 4)||
