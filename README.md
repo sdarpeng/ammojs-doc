@@ -398,7 +398,7 @@ forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html
 -在鼠标位置创建一个kinematicBody（可以直接修改位置，且接受碰撞）；  
 -创建一个6dofconstraint或者p2pconstraint，用来连接新创建的kinematicBody和射线穿透的rigidBody/SoftBody；  
 2）、onmouseup()  
--销毁刚刚创建的constraint；
+-销毁刚刚创建的constraint；  
 -销毁刚刚创建的kinematicBody；  
-## 布料self-collision的实现  
+## 2、布料self-collision的实现  
 毫无头绪。
