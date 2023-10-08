@@ -430,7 +430,10 @@ the items which signed * means it was updated by me and needs to be checked agai
 -禁用OrbitControls;  
 -在鼠标位置创建一个kinematicBody（可以直接修改位置，且接受碰撞）；  
 -创建一个6dofconstraint或者p2pconstraint，用来连接新创建的kinematicBody和射线穿透的rigidBody/SoftBody；  
-2）、onmouseup()  
+2）、onmousemove()  
+-获取鼠标的更新位置；  
+-修改kinematicBody的位置；  
+3）、onmouseup()  
 -销毁刚刚创建的constraint；  
 -销毁刚刚创建的kinematicBody；  
 -启用OrbitControls；
