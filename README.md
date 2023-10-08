@@ -247,6 +247,8 @@ the items which signed * means it was updated by me and needs to be checked agai
 |  ||
 |:--|:--|
 |方法|含义|
+|appendAnchor( int: nodes index, btRigidBody, bool: disableCollisionBetweenLinkedBodies=false, btScalar: influence=1)|为SoftBody创建锚点以使其固定在某个刚体上|
+|*removeAnchor|不好意思，当前版本没有提供这个接口|
 |get_m_cfg()||
 |set_viterations (int)||
 |set_piterations (int)||
