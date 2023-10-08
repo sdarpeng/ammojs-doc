@@ -87,7 +87,7 @@ the items which signed * means it was updated by me and needs to be checked agai
 |stepSimulation(timeStep)|进行世界物理模拟，timeStep为时间步进|
 |addConstraint(btTypedConstraint constraint)|在物理世界中添加约束，constraint为约束引用|
 |removeConstraint(btTypedConstraint constraint)|在物理世界删除约束，constraint为约束引用|
-|setGravity(gravity)|设置物理世界的重力，gravity为重力向量|
+|setGravity( btVector3 gravity)|设置物理世界的重力，gravity为重力向量|
 |addRidgidBody(btRidgidBody body)|在物理世界添加刚体，body为要添加的刚体|
 |removeRidgidBody(btRidgidBody body)|删除物理世界的刚体|
 |getNumConstraint()|获取物理世界的约束总数|
@@ -96,6 +96,7 @@ the items which signed * means it was updated by me and needs to be checked agai
 |getCollisionObjectArray()|获取物理世界中碰撞物体的数组|
 |contactTest ( btCollisionObject colObj, ContactResultCallback resultCallback)|进行接触检测，colObj为指向碰撞物体类的引用，resultCallback为接触回调类的对象|
 |getDispatcher()|获取物理世界的事件|
+|getWorldInfo()|获取物理世界的信息，该信息可以用set_m_gravity( btVector3)方式设置重力参数，跟直接对world进行setGravity(btVector3)效果是一样的|
 ## 5. btDiscreteDynamicsWorld类：离散物理世界类
 实际开发中常使用该类来创建物理世界对象，创建时要使用构造器，需要给出碰撞检测算法分配器、碰撞检测粗测算法接口和碰撞检测配置接口。
 |  ||
