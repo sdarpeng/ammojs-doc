@@ -97,6 +97,7 @@ the items which signed * means it was updated by me and needs to be checked agai
 |contactTest ( btCollisionObject colObj, ContactResultCallback resultCallback)|进行接触检测，colObj为指向碰撞物体类的引用，resultCallback为接触回调类的对象|
 |getDispatcher()|获取物理世界的事件|
 |getWorldInfo()|获取物理世界的信息，该信息可以用set_m_gravity( btVector3)方式设置重力参数，跟直接对world进行setGravity(btVector3)效果是一样的|
+|rayTest(tempVRayOrigin, tempVRayDest, closestRayResultCallback )|进行射线检测|
 ## 5. btDiscreteDynamicsWorld类：离散物理世界类
 实际开发中常使用该类来创建物理世界对象，创建时要使用构造器，需要给出碰撞检测算法分配器、碰撞检测粗测算法接口和碰撞检测配置接口。
 |  ||
@@ -259,7 +260,8 @@ the items which signed * means it was updated by me and needs to be checked agai
 |set_m_kLST ( float )| | 
 |set_m_kAST ( float )| | 
 |setTotalMass ( float )||
-|get_m_nodes()|获取布料的所有粒子节点，结果为一个数组，数组对象可以用.at(i)进行访问|  
+|get_m_nodes()|获取布料的所有粒子节点，结果为一个数组，数组对象可以用.at(i)进行访问，也可以用.size()获取数组对象个数|  
+|get_m_anchors()|获取布料的所有锚点，其结果为一个数组，数组对象可以用.at(i)进行访问，也可以用.size()获取数组对象个数|
 ## 18、btSoftBody粒子节点方法
 |  ||
 |:--|:--|
@@ -409,10 +411,16 @@ the items which signed * means it was updated by me and needs to be checked agai
 |构造器|含义|
 |2）方法：||
 |方法|含义|
+|get_m_rayFromWorld().setValue( Vector3: fromValue)|设置射线的起点|
+|get_m_rayToWorld().setValue( Vector3: toValue)|设置射线的终点|
 |*hasHit()|结果为Bool，存在射线命中是，否|
 |*get_m_collisionObject()|获取射线命中对象|
 |*isStaticObject()|结果为Bool，判断对象是否为静止对象（质量为0）|
 |*isKinematicObject()|结果为Bool，判断对象是否为（非冲量型）kinematic对象|
+|*get_m_hitPointWorld()|获取射线命中位置的世界坐标|
+|*get_m_hitNormalWorld()|获取射线命中位置的世界法向矢量|
+|*set_m_closestHitFraction( float )|设置射线折射率？|
+|*set_m_collisionObject(null)|???|
 
 # 四、一些开发思路
 ## 1、鼠标拾取刚体效果的实现方案
