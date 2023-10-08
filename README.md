@@ -353,7 +353,7 @@ forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html
 |2）方法：||
 |方法|含义|
 |*addSingleResult()|调用回调函数一次并返回一组数据|
-|*wrapPointer(objWrap,btCollisionObjectWrapper)||
+|*wrapPointer( objWrap, btCollisionObjectWrapper )||
 |*getManifoldByIndexInternal( index )||
 |*getBody0()|返回参与碰撞的第1个对象|
 |*getBody1()|返回参与碰撞的第2个对象|
