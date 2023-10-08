@@ -359,7 +359,8 @@ forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html
 # 三、回调
 |  ||
 |:--|:--|
-|*ConcreteContactResultCallback()|回调函数|
+|*ConcreteContactResultCallback()|接触（碰撞）事件回调函数|
+|*ClosestRayResultCallback()|射线检测回调函数|
 |1）构造器：||
 |构造器|含义|
 |*btManifoldPoint|多歧事件点|
@@ -376,3 +377,9 @@ forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html
 |*getNumContacts()|获取物理世界多歧事件中的接触（碰撞）事件数量|
 |*getContactPoint()|获取上一条接触（碰撞）事件的碰撞点|
 |*getDistance()|获取上一条碰撞点的距离|
+|*hasHit()|结果为Bool，存在射线命中是，否|
+|*get_m_collisionObject()|获取射线命中对象|
+|*isStaticObject()|结果为Bool，判断对象是否为静止对象（质量为0）|
+|*isKinematicObject()|结果为Bool，判断对象是否为（非冲量型）kinematic对象|
+
+
