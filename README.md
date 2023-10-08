@@ -261,6 +261,10 @@ forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html
 |方法|含义|
 |getBreakingImpulseThreshold()|获取毁坏关节的最大冲量|
 |setBreakingImpulseThreshold( threshold)|设置毁坏关节的最大冲量， threshold为要设置的冲量值|
+|*get_m_setting()|获取关节的设定信息|
+|*set_m_impulseClamp( float )|设置关节的冲凉钳制参数|
+|*set_m_tau( float)|设置那啥|
+
 |关节主要有铰链关节、滑动关节、六自由度关节、点对点关节等。||
 ## 1. 铰链关节btHingeConstraint：
 铰链是仅有一个旋转自由度的关节，通过铰链的约束限制，相关刚体仅能绕铰链轴旋转。
@@ -325,7 +329,7 @@ forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html
 |setRatio ( ratio)|设置齿轮关节转动比例|
 |gettAxisA()|获取关联第1个刚体的轴向量|
 |gettAxisB()|获取关联第1个刚体的轴向量|
-|getRatio( )|获取齿轮关节的转动比例|
+|getRatio()|获取齿轮关节的转动比例|
 ## 4. 点对点关节btPoint2PointConstraint：
 点对点关节模拟了两个物体上某两个点呈现连接效果。
 |  ||
