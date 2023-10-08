@@ -264,6 +264,7 @@ forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html
 |*get_m_setting()|获取关节的设定信息|
 |*set_m_impulseClamp( float )|设置关节的冲凉钳制参数|
 |*set_m_tau( float)|设置那啥|
+|*getConstraintType()|获取关节类型|
 
 |关节主要有铰链关节、滑动关节、六自由度关节、点对点关节等。||
 ## 1. 铰链关节btHingeConstraint：
