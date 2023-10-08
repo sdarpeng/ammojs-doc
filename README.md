@@ -256,6 +256,13 @@ the items which signed * means it was updated by me and needs to be checked agai
 |set_m_kLST ( float )| | 
 |set_m_kAST ( float )| | 
 |setTotalMass ( float )||
+|get_m_nodes()|获取布料的所有粒子节点，结果为一个数组，数组对象可以用.at(i)进行访问|  
+## 18、btSoftBody粒子节点方法
+|at( int )|访问某个编号的粒子节点|
+|get_m_x()|获取某个布料粒子节点的位置|
+|get_m_n()|获取某个布料粒子节点的法向|
+|get_m_v()|获取某个布料粒子节点的速度|
+
 # 二、关节：
 关节是两个物体之间的约束，关节的父类为btTypedConstraint类，其他关节都继承自该类，其封装了具体关节的共用方法。
 |  ||
