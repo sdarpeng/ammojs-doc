@@ -65,6 +65,9 @@ forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html
 |applyCentralImpulse(btVector3 impulse)|应用中心冲量，impulse为要应用的冲量|
 |applyTorqueImpulse(btVector3 torque)|应用扭矩冲量，torque为要应用的冲量|
 |applyImpulse ( btVector3 impulse, btVector3 rel_pos)|应用冲量，impulse为要应用的冲量，rel_pos为要施加冲量的位置坐标|
+|setLinearVelocity( btVector3 )|设置线性速度|
+|setAngularVelocity( btVector3 )|设置角速度|
+|setContactProcessingThreshold( float)|设置接触（碰撞）检测阈值，一般会设的很大，例如100,000,000|
 |*setFriction( float factor)| 设置摩擦力|
 |*setRollingFriction( float factor)|设置滚动摩擦力|
 |*setActivationState( stateIndex default: 4)||
