@@ -427,10 +427,12 @@ the items which signed * means it was updated by me and needs to be checked agai
 常规的rigidBody或者softBody是只受到冲量影响，因此是不能被直接修改位置的。要实现鼠标拾取的效果，可按照如下的思路：  
 1）、onmousedown()  
 -在鼠标点击事件时，用raycast检测是否穿透了某个rigidBody/SoftBody；  
+-禁用OrbitControls;  
 -在鼠标位置创建一个kinematicBody（可以直接修改位置，且接受碰撞）；  
 -创建一个6dofconstraint或者p2pconstraint，用来连接新创建的kinematicBody和射线穿透的rigidBody/SoftBody；  
 2）、onmouseup()  
 -销毁刚刚创建的constraint；  
 -销毁刚刚创建的kinematicBody；  
+-启用OrbitControls；
 ## 2、布料self-collision的实现  
 毫无头绪。
