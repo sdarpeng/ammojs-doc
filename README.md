@@ -346,10 +346,14 @@ forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html
 |  ||
 |:--|:--|
 |*ConcreteContactResultCallback()|回调函数|
+|1）构造器：||
+|构造器|含义|
+|*btManifoldPoint|多歧事件点|
+|*btCollisionObjectWrapper||
+|2）方法：||
 |方法|含义|
 |*addSingleResult()|调用回调函数一次并返回一组数据|
-|*btCollisionObjectWrapper||
-|*wrapPointer||
+|*wrapPointer(objWrap,btCollisionObjectWrapper)||
 |*getManifoldByIndexInternal( index )||
 |*getBody0()|返回参与碰撞的第1个对象|
 |*getBody1()|返回参与碰撞的第2个对象|
