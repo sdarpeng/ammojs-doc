@@ -228,7 +228,7 @@ forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html
 |setUserConstrainType(userConstraintType)|设置关节类型|
 |setUserConstraintId(uid)|设置关节id|
 |getUserConstraintId()|获取关节id|
-## 16. btSoftBodyHelps类：软体
+## 16. btSoftBodyHelpers类：软体
 软体是不同于固定形状的刚体，如绳索，可以实现拉伸、弯曲等不同姿态，如软布可以呈现上下波动。创建软体时必须使用软体帮助类，该类提供了创建软体的方法：
 |  ||
 |:--|:--|
@@ -237,6 +237,19 @@ forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html
 |CreatePatch(btSoftBodyWorldInfo worldInfo, btVector3 corner00, btVector3 corner10, btVector3 corner01, btVector3 corner11, resx, resy, fixeds, boolean gendiags)|创建软布的方法，worldInfo为软体世界信息，corner00、corner10、corner01、corner11为软布四个角的坐标，resx为顶点列数，resy为顶点行数，gendiags为软布四角是否固定，true表示固定|
 |CreateEllipsoid(btSoftBodyWorldInfo worldInfo, btVector3 center, btVector3 radius, res)|创建球软体的方法，worldInfo为软体世界信息，center为中心点坐标，radius为半径，res为恢复系数|
 |CreateFromTriMesh(btSoftBody worldInfo, vertives, triangles, ntriangles, boolean randomizeConstraints)|创建三角形网络软体的方法，worldInfo为软体世界信息，vertices为顶点数组坐标，triangles为顶点索引数组，ntriangles为三角形总数|
+## 17. btSoftBody类：软体
+|  ||
+|:--|:--|
+|方法|含义|
+|get_m_cfg()||
+|set_viterations (int)||
+|set_piterations (int)||
+|set_kDF ( float )||
+|set_kDP ( float )||
+|set_kPR ( float )|设置压力|
+|set_m_kLST ( float )| | 
+|set_m_kAST ( float )| | 
+|setTotalMass ( float )||
 # 二、关节：
 关节是两个物体之间的约束，关节的父类为btTypedConstraint类，其他关节都继承自该类，其封装了具体关节的共用方法。
 |  ||
