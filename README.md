@@ -59,7 +59,7 @@ the items which signed * means it was updated by me and needs to be checked agai
 |getLinearVelocity()|获取线速度，返回值为获取的线速度向量|
 |getAngularVelocity()|获取加速度，返回值为获取的角速度向量|
 |setAngularFactor(btVector3 angularFactort)|获取角度因子，angularFactort为要设置的角度因子|
-|getMotionState()|获取刚体的形状，返回值为获取的形状指针，该指针可以进一步用getWorldTransform( var )的方法，将世界坐标传递给该var|
+|getMotionState()|获取刚体的形状，返回值为获取的形状指针，该指针可以进一步用getWorldTransform( var )的方法，将世界坐标传递给该var，如果刚体是kinematic类型的，还可以用setWorldTransform( btTempTRansform )的方式修改位置|
 |applyCentralForce(btVector3 force)|应用中心力，force为提供的力向量|
 |applyTorch(btVector3 torquel)|应用扭矩，torque为要应用的刚体扭矩|
 |applyForce(btVector3 force, btVector3 rel_pos)|应用力，force为要应用的力，rel_pos为施加力的位置|
