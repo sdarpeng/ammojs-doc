@@ -63,6 +63,9 @@ forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html
 |applyCentralImpulse(btVector3 impulse)|应用中心冲量，impulse为要应用的冲量|
 |applyTorqueImpulse(btVector3 torque)|应用扭矩冲量，torque为要应用的冲量|
 |applyImpulse ( btVector3 impulse, btVector3 rel_pos)|应用冲量，impulse为要应用的冲量，rel_pos为要施加冲量的位置坐标|
+|setFriction( float factor)| 设置摩擦力|
+|setRollingFriction( float factor)|设置滚动摩擦力|
+|setActivationState( stateIndex default: 4)||
 ## 4. btDynamicsWorld类：物理世界类
 该类有两个重要的子类，离散物理世界类btDiscreteDynamicsWorld和用于测试的类btSimpleDynamicsWorld类。
 |  ||
@@ -339,6 +342,14 @@ forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html
 # 三、回调
 |  ||
 |:--|:--|
-|ConcreteContactResultCallback|回调函数|
+|ConcreteContactResultCallback()|回调函数|
 |方法|含义|
-|addSingleResult|调用回调函数一次并返回一组数据|
+|addSingleResult()|调用回调函数一次并返回一组数据|
+|btCollisionObjectWrapper||
+|wrapPointer||
+|getManifoldByIndexInternal( index )||
+|getDispatcher||
+|getNumManifolds||
+|getNumContacts||
+|getContactPoint||
+|getDistance||
