@@ -390,4 +390,16 @@ forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html
 |*isStaticObject()|结果为Bool，判断对象是否为静止对象（质量为0）|
 |*isKinematicObject()|结果为Bool，判断对象是否为（非冲量型）kinematic对象|
 
+# 四、一些开发思路
+## 1、鼠标拾取刚体效果的实现方案
+常规的rigidBody或者softBody是只受到冲量影响，因此是不能被直接修改位置的。要实现鼠标拾取的效果，可按照如下的思路：
+1）、onmousedown()
+-在鼠标点击事件时，用raycast检测是否穿透了某个rigidBody/SoftBody；
+-在鼠标位置创建一个kinematicBody（可以直接修改位置，且接受碰撞）；
+-创建一个6dofconstraint或者p2pconstraint，用来连接新创建的kinematicBody和射线穿透的rigidBody/SoftBody；
+2）、onmouseup()
+-销毁刚刚创建的constraint；
+-销毁刚刚创建的kinematicBody；
 
+## 布料self-collision的实现
+毫无头绪。
