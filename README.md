@@ -2,7 +2,7 @@
 A non-official ammo.js documentation
 forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html)
 
-* shows it was updated by me and needs to be checked again.
+the items which signed * means it was updated by me and needs to be checked again.
 
 # 一、常用的类：
 
