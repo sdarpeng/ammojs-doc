@@ -365,10 +365,10 @@ the items which signed * means it was updated by me and needs to be checked agai
 |getAngular(int axis_index)|获取指定轴的旋转角度，基于欧拉角的计算方法|
 
 # 三、回调
+## 1、接触（碰撞）事件回调
 |  ||
 |:--|:--|
 |*ConcreteContactResultCallback()|接触（碰撞）事件回调函数|
-|*ClosestRayResultCallback()|射线检测回调函数|
 |1）构造器：||
 |构造器|含义|
 |*btManifoldPoint|多歧事件点|
@@ -385,6 +385,14 @@ the items which signed * means it was updated by me and needs to be checked agai
 |*getNumContacts()|获取物理世界多歧事件中的接触（碰撞）事件数量|
 |*getContactPoint()|获取上一条接触（碰撞）事件的碰撞点|
 |*getDistance()|获取上一条碰撞点的距离|
+## 2、射线检测回调  
+|  ||
+|:--|:--|
+|*ClosestRayResultCallback()|射线检测回调函数|
+|1）构造器：||
+|构造器|含义|
+|2）方法：||
+|方法|含义|
 |*hasHit()|结果为Bool，存在射线命中是，否|
 |*get_m_collisionObject()|获取射线命中对象|
 |*isStaticObject()|结果为Bool，判断对象是否为静止对象（质量为0）|
