@@ -1,10 +1,13 @@
 # ammojs-doc
 A non-official ammo.js documentation
+forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html)
 
-|一、常用的类：||
+# 一、常用的类：
+
+## 1. btVector3类：三维向量类
+该类使用频率很高，由3个浮点数类型的x、y、z变量组成，可以表示速度、点、力等向量。
+|  ||
 |:--|:--|
-|1. btVector3类：三维向量类||
-|该类使用频率很高，由3个浮点数类型的x、y、z变量组成，可以表示速度、点、力等向量。||
 |1）构造器：||
 |构造器|含义|
 |btVector3()|创建一个三维分量初始值都为零的三维向量对象|
@@ -20,8 +23,10 @@ A non-official ammo.js documentation
 |op_mul(btVector3 v)|获取与向量v的叉积|
 |op_add(btVector3 v)|获取与向量v的和|
 |op_sub(btVector3 v)|获取与向量v的差|
-|2. btTransform类：变换类||
-|该类由位置和方向组合而成，用来表示刚体的变换，如平移、旋转等。||
+## 2. btTransform类：变换类
+该类由位置和方向组合而成，用来表示刚体的变换，如平移、旋转等。
+|  ||
+|:--|:--|
 |1）构造器：||
 |构造器|含义|
 |btTransform()|无参构造函数|
@@ -36,8 +41,10 @@ A non-official ammo.js documentation
 |getBasic()|换取表示变换信息的3x3矩阵|
 |setFromOpenGLMatrix(m)|设置变换的矩阵，m为旋转平移缩放向量合成的4x4变换矩阵首地址|
 |btQuaternion类表示的四元数，用于对三维向量进行变换。||
-|3. btRigidBody类：刚体类||
-|该类用于存储刚体的一些属性信息，包括线速度、角速度、摩擦系数等，其中封装了多种方法，用于设置和获取相关属性信息。||
+## 3. btRigidBody类：刚体类
+该类用于存储刚体的一些属性信息，包括线速度、角速度、摩擦系数等，其中封装了多种方法，用于设置和获取相关属性信息。
+|  ||
+|:--|:--|
 |1）构造器：||
 |构造器|含义|
 |btRigidBody(btRigidBodyConstructionInfo constructionInfo)|创建一个刚体对象，constructionInfo为刚体信息对象|
@@ -56,8 +63,10 @@ A non-official ammo.js documentation
 |applyCentralImpulse(btVector3 impulse)|应用中心冲量，impulse为要应用的冲量|
 |applyTorqueImpulse(btVector3 torque)|应用扭矩冲量，torque为要应用的冲量|
 |applyImpulse ( btVector3 impulse, btVector3 rel_pos)|应用冲量，impulse为要应用的冲量，rel_pos为要施加冲量的位置坐标|
-|4. btDynamicsWorld类：物理世界类||
-|该类有两个重要的子类，离散物理世界类btDiscreteDynamicsWorld和用于测试的类btSimpleDynamicsWorld类。||
+## 4. btDynamicsWorld类：物理世界类
+该类有两个重要的子类，离散物理世界类btDiscreteDynamicsWorld和用于测试的类btSimpleDynamicsWorld类。
+|  ||
+|:--|:--|
 |1）构造器：||
 |构造器|含义|
 |btDynamicsWorld ( btbtDispatcher dispatcher, btBroadphaseInterface broadphase, btCollisionConfiguration conf)|物理世界类构造器，dispatcher为碰撞检测算法分配器引用，conf为碰撞检测配置信息|
@@ -74,16 +83,20 @@ A non-official ammo.js documentation
 |getNumCollisionObjects()|获取物理世界中碰撞物体的数量|
 |getCollisionObjectArray()|获取物理世界中碰撞物体的数组|
 |contactTest ( btCollisionObject colObj, ContactResultCallback resultCallback)|进行接触检测，colObj为指向碰撞物体类的引用，resultCallback为接触回调类的对象|
-|5. btDiscreteDynamicsWorld类：离散物理世界类||
-|实际开发中常使用该类来创建物理世界对象，创建时要使用构造器，需要给出碰撞检测算法分配器、碰撞检测粗测算法接口和碰撞检测配置接口。||
+## 5. btDiscreteDynamicsWorld类：离散物理世界类
+实际开发中常使用该类来创建物理世界对象，创建时要使用构造器，需要给出碰撞检测算法分配器、碰撞检测粗测算法接口和碰撞检测配置接口。
+|  ||
+|:--|:--|
 |1）构造器：||
 |构造器|含义|
 |btDiscreteDynamicsWorld ( btbtDispatcher dispatcher, btBroadphaseInterface pairCache,btConstraintSolver constraintSolver, btCollisionConfiguration conf)|离散物理世界类构造器，dispatcher为碰撞检测算法分配器引用，pairCache为碰撞粗测算法接口，constraintSolver为约束解决器引用，conf为碰撞检测配置信息|
 |2）方法：||
 |方法|含义|
 |btCollisionWorld getCollisionWorld()|获取当前物理世界的引用|
-|6. btSoftRigidDynamicsWorld类：支持模拟软体的物理世界||
-|可支持模拟软体，继承了btDiscreteDynamicsWorld类。所谓软体，不具有固定形状，可像软布一样改变本身形状的物体。||
+## 6. btSoftRigidDynamicsWorld类：支持模拟软体的物理世界
+可支持模拟软体，继承了btDiscreteDynamicsWorld类。所谓软体，不具有固定形状，可像软布一样改变本身形状的物体。
+|  ||
+|:--|:--|
 |1）构造器：||
 |构造器|含义|
 |btSoftRigidDynamicsWorld ( btbtDispatcher dispatcher, btBroadphaseInterface pairCache,btConstraintSolver constraintSolver, btCollisionConfiguration conf, btSoftBodySolver softBodySolver)|离散物理世界类构造器，dispatcher为碰撞检测算法分配器引用，pairCache为碰撞粗测算法接口，constraintSolver为约束解决器引用，conf为碰撞检测配置信息|
@@ -91,8 +104,10 @@ A non-official ammo.js documentation
 |方法|含义|
 |addSoftBody(btSoftBody body)|向物理世界添加物体，body为指向软体的引用|
 |removeSoftBody(btSoftBody body)|从物理世界删除指定软体|
-|7. btCollisionShape类：碰撞形状类||
-|该类封装了一些判断碰撞形状类型的方法，所有碰撞形状都直接或间接继承自此类。方法有：||
+## 7. btCollisionShape类：碰撞形状类
+该类封装了一些判断碰撞形状类型的方法，所有碰撞形状都直接或间接继承自此类。
+|  ||
+|:--|:--|
 |1）构造器：||
 |构造器|含义|
 |btCollisionShape ( )|碰撞形状构造器|
@@ -102,8 +117,10 @@ A non-official ammo.js documentation
 |calculateLocalInertia(mass, btVector3 inertia)|计算惯性，mass为质量，inertia为惯性|
 |setMargin(margin)|设置碰撞形状边缘数|
 |getMargin()|获取碰撞形状边缘数|
-|8. btBoxShape类：长方体盒碰撞形状||
-|该类可用于盒子、箱子等规则物体。||
+## 8. btBoxShape类：长方体盒碰撞形状
+该类可用于盒子、箱子等规则物体。
+|  ||
+|:--|:--|
 |1）构造器：||
 |构造器|含义|
 |btBoxShape(btVector3 boxHalfExtents)|构造器，boxHalfExtents表示立方体盒子的半区域|
@@ -111,16 +128,20 @@ A non-official ammo.js documentation
 |方法|含义|
 |setMargin(margin)|设置碰撞形状边缘数|
 |getMargin()|获取碰撞形状边缘数|
-|9. btStaticPlaneShape类：静态平面形状||
-|该类表示静态的平面，如地面、屋顶等，创建时需要给出法向量。||
+## 9. btStaticPlaneShape类：静态平面形状
+该类表示静态的平面，如地面、屋顶等，创建时需要给出法向量。
+|  ||
+|:--|:--|
 |1）构造器为：||
 |构造器|含义|
 |btStaticPlaneShape(btVector3 planeNormal, float planeConstant)|静态平面构造器，参数planeNormal为平面法向量，planeConstant为平面上任意一点|
 |2）方法：||
 |方法|含义|
 |getPlaneNormal()|获取平面形状的法向量|
-|10. btSphereShape类：球体形状||
-|该类表示一个球体。||
+## 10. btSphereShape类：球体形状
+该类表示一个球体。
+|  ||
+|:--|:--|
 |1）构造器为：||
 |构造器|含义|
 |btSphereShape(radius)|球体碰撞形状构造器，radius为球半径|
@@ -129,16 +150,20 @@ A non-official ammo.js documentation
 |setMargin(margin)|设置碰撞形状边缘数|
 |getMargin()|获取碰撞形状边缘数|
 |getRadius( )|获取球的半径|
-|11. btCylinderShape类：圆柱形状||
-|该类表示一个圆柱形状，如杆、金币、石柱等都可以采用此类，但碰撞计算量较大，不如胶囊。||
+## 11. btCylinderShape类：圆柱形状
+该类表示一个圆柱形状，如杆、金币、石柱等都可以采用此类，但碰撞计算量较大，不如胶囊。
+|  ||
+|:--|:--|
 |1）构造器为：||
 |构造器|含义|
 |btCylinderShape(btVector3 halfExtents)|圆柱对象构造器，halfExtents为圆柱的半区域，三维分量，第1和3维表示圆柱的长短半径，第2维是长度|
 |2）方法：||
 |方法|含义|
 |getRadius( )|获取圆柱的半径|
-|12. btCapsuleShape类：胶囊形状||
-|该类表示一个胶囊形状，碰撞计算量比圆柱小，旗杆、铅笔等一般使用该类。||
+## 12. btCapsuleShape类：胶囊形状
+该类表示一个胶囊形状，碰撞计算量比圆柱小，旗杆、铅笔等一般使用该类。
+|  ||
+|:--|:--|
 |1）构造器为：||
 |构造器|含义|
 |btCapsuleShape(float radius, float height)|胶囊碰撞形状对象构造器，参数radius为两端球面的半径，height为中间圆柱的长度|
@@ -146,16 +171,20 @@ A non-official ammo.js documentation
 |方法|含义|
 |getRadius( )|获取胶囊截面的半径|
 |getHalfHeight( )|获取中间圆柱部分长度值的一半|
-|13. btConeShape类：圆锥形状类||
-|该类表示圆锥形状。||
+## 13. btConeShape类：圆锥形状类
+该类表示圆锥形状。
+|  ||
+|:--|:--|
 |1）构造器为：||
 |构造器|含义|
 |btConeShape(float radius, float height)|圆锥碰撞形状对象构造器，参数radius为圆锥的半径，height为圆锥的高度|
 |2）方法：||
 |方法|含义|
 |getRadius( )|获取圆锥的半径|
-|14. btCompoundShape类：复合形状||
-|该类表示一个复合形状，可以通过创建多个单一形状组合成一个复合形状对象。||
+## 14. btCompoundShape类：复合形状
+该类表示一个复合形状，可以通过创建多个单一形状组合成一个复合形状对象。
+|  ||
+|:--|:--|
 |1）构造器为：||
 |构造器|含义|
 |btCompoundShape()|复合形状构造器|
@@ -165,8 +194,10 @@ A non-official ammo.js documentation
 |removeChildShape( childShapeindex)|从组合形状中删除指定的子形状， childShapeindex为子形状索引|
 |getNumChildShapes()|获取当前组合形状中子形状的数量|
 |getChildShape(index)|获取组合形状中指定索引编号的子形状，index为子形状索引|
-|15. btRaycastVehicle类：交通工具类||
-|交通工具类是模拟现实世界中的交通工具，有刚体车身、四个轮子，支持前轮驱动和后轮驱动，支持车轮转向等，提供了添加和更新车轮的方法，设置车轮刹车的方法。||
+## 15. btRaycastVehicle类：交通工具类
+交通工具类是模拟现实世界中的交通工具，有刚体车身、四个轮子，支持前轮驱动和后轮驱动，支持车轮转向等，提供了添加和更新车轮的方法，设置车轮刹车的方法。
+|  ||
+|:--|:--|
 |方法|含义|
 |updateAction ( btCollisionWorld collisionWorld, btScalar step)|更新交通工具，collisionWorld为物理世界的引用，step为步长|
 |btTransform getChassisWorldTransform()|获取交通工具的变换对象|
@@ -190,15 +221,19 @@ A non-official ammo.js documentation
 |setUserConstrainType(userConstraintType)|设置关节类型|
 |setUserConstraintId(uid)|设置关节id|
 |getUserConstraintId()|获取关节id|
-|16. btSoftBodyHelps类：软体||
-|软体是不同于固定形状的刚体，如绳索，可以实现拉伸、弯曲等不同姿态，如软布可以呈现上下波动。创建软体时必须使用软体帮助类，该类提供了创建软体的方法：||
+## 16. btSoftBodyHelps类：软体
+软体是不同于固定形状的刚体，如绳索，可以实现拉伸、弯曲等不同姿态，如软布可以呈现上下波动。创建软体时必须使用软体帮助类，该类提供了创建软体的方法：
+|  ||
+|:--|:--|
 |方法|含义|
 |CreateRope ( btSoftBodyWorldInfo worldInfo, btVector3 from, btVector3 to, res, fixeds)|创建绳索软体的方法，worldInfo为软体世界信息，from为绳索起点位置，to为绳索终点位置，res为恢复系数，fixeds为坚硬系数|
 |CreatePatch(btSoftBodyWorldInfo worldInfo, btVector3 corner00, btVector3 corner10, btVector3 corner01, btVector3 corner11, resx, resy, fixeds, boolean gendiags)|创建软布的方法，worldInfo为软体世界信息，corner00、corner10、corner01、corner11为软布四个角的坐标，resx为顶点列数，resy为顶点行数，gendiags为软布四角是否固定，true表示固定|
 |CreateEllipsoid(btSoftBodyWorldInfo worldInfo, btVector3 center, btVector3 radius, res)|创建球软体的方法，worldInfo为软体世界信息，center为中心点坐标，radius为半径，res为恢复系数|
 |CreateFromTriMesh(btSoftBody worldInfo, vertives, triangles, ntriangles, boolean randomizeConstraints)|创建三角形网络软体的方法，worldInfo为软体世界信息，vertices为顶点数组坐标，triangles为顶点索引数组，ntriangles为三角形总数|
-|二、关节：||
-|关节是两个物体之间的约束，关节的父类为btTypedConstraint类，其他关节都继承自该类，其封装了具体关节的共用方法。||
+# 二、关节：
+关节是两个物体之间的约束，关节的父类为btTypedConstraint类，其他关节都继承自该类，其封装了具体关节的共用方法。
+|  ||
+|:--|:--|
 |1）构造器为：||
 |构造器|含义|
 |btTypedConstraint()|关节构造器|
@@ -207,8 +242,10 @@ A non-official ammo.js documentation
 |getBreakingImpulseThreshold()|获取毁坏关节的最大冲量|
 |setBreakingImpulseThreshold( threshold)|设置毁坏关节的最大冲量， threshold为要设置的冲量值|
 |关节主要有铰链关节、滑动关节、六自由度关节、点对点关节等。||
-|1. 铰链关节btHingeConstraint：||
-|铰链是仅有一个旋转自由度的关节，通过铰链的约束限制，相关刚体仅能绕铰链轴旋转。||
+## 1. 铰链关节btHingeConstraint：
+铰链是仅有一个旋转自由度的关节，通过铰链的约束限制，相关刚体仅能绕铰链轴旋转。
+|  ||
+|:--|:--|
 |1）构造器：||
 |构造器|含义|
 |btHingeConstraint ( btRigidBody rbA, btRigidBody rbB, btVector3 pivotInA, btVector3 pivotInB, btVector3 axisInA, btVector3 axisInB, boolean useReferenceFrameA)|铰链构造器，参数rbA和rbB为要添加约束的两个刚体，pivotInA和pivotInB分别为对应的中心点，axisInA和axisInB为两个刚体的轴向量，useReferenceFrameA为两个刚体之间的约束关系，正常对应还是交叉对应，默认false|
@@ -226,8 +263,10 @@ A non-official ammo.js documentation
 |enableMotor(boolean enableMotor)|设置是否开启马达|
 |setMaxMotorImpulse(maxMotorImpluse)|设置马达的最大冲量|
 |马达用于模拟提供动力的部件。||
-|2. 滑动关节btSliderConstraint：||
-|滑动关节是一种仅有平移和旋转自由度的关节，如螺丝和螺母。||
+## 2. 滑动关节btSliderConstraint：
+滑动关节是一种仅有平移和旋转自由度的关节，如螺丝和螺母。
+|  ||
+|:--|:--|
 |1）构造器：||
 |构造器|含义|
 |btSliderConstraint(btRigidBody rbA, btRigidBody rbB, btTransform frameInA, btTransform frameInB, boolean useLinearReferenceFrameA)|滑动关节构造器，rbA和rbB为两个刚体，frameInA和frameInB分别为从约束位置到刚体质心位置的变换，useLinearReferenceFrameA表示两个刚体与两个约束之间的对应关系，为true时rbA对应frameInA，为false时交叉对应|
@@ -252,8 +291,10 @@ A non-official ammo.js documentation
 |setPoweredAngMotor ( boolean onOff)|设置是否启动转动对应的马达|
 |setMaxAngMotorForce (float maxAngMotorForce)|设置驱动转动马达的最大力|
 |setTargetAngMotorVelocity (float targetangMotorVelocity)|设置驱动转动马达的速度|
-|3. 齿轮关节btGearConstraint：||
-|为了模拟现实世界中齿轮之间的转动效果。||
+## 3. 齿轮关节btGearConstraint：
+为了模拟现实世界中齿轮之间的转动效果。
+|  ||
+|:--|:--|
 |1）构造器：||
 |构造器|含义|
 |btGearConstraint(btRigidBody rbA, btRigidBody rbB, btVector3 axisA, btVector3 axisA, float ratio)|齿轮关节构造器，rbA和rbB为两个刚体，axisA和axisB分别为两个刚体的轴向量，ratio为转动比例|
@@ -265,8 +306,10 @@ A non-official ammo.js documentation
 |gettAxisA()|获取关联第1个刚体的轴向量|
 |gettAxisB()|获取关联第1个刚体的轴向量|
 |getRatio( )|获取齿轮关节的转动比例|
-|4. 点对点关节btPoint2PointConstraint：||
-|点对点关节模拟了两个物体上某两个点呈现连接效果。||
+## 4. 点对点关节btPoint2PointConstraint：
+点对点关节模拟了两个物体上某两个点呈现连接效果。
+|  ||
+|:--|:--|
 |1）构造器：||
 |构造器|含义|
 |btPoint2PointConstraint(btRigidBody rbA, btRigidBody rbB, btVector3 pivotInA, btVector3 pivotInB)|点对点约束构造器，rbA和rbB为两个刚体，pivotInA和pivotInB为关节分别在两个刚体坐标系中的位置|
@@ -277,8 +320,10 @@ A non-official ammo.js documentation
 |setPivotB ( btVector3 pivotB)|设置关节在第2个刚体坐标系中的位置|
 |getPivotInA ()|获取关节在第1个刚体坐标系中的位置|
 |getPivotInB ()|获取关节在第2个刚体坐标系中的位置|
-|5. 六自由度关节btGeneric6DofConstraint：||
-|六自由度关节有6个不同的自由度，包括3个平移自由度和3个转动自由度，可以模拟动物关节及机械结构，如肘关节、颈关节、机械手臂等。通过锁死或限制此关节的某个或某几个自由度，可以模拟其他类型的关节。||
+## 5. 六自由度关节btGeneric6DofConstraint：
+六自由度关节有6个不同的自由度，包括3个平移自由度和3个转动自由度，可以模拟动物关节及机械结构，如肘关节、颈关节、机械手臂等。通过锁死或限制此关节的某个或某几个自由度，可以模拟其他类型的关节。
+|  ||
+|:--|:--|
 |1）构造器：||
 |构造器|含义|
 |btGeneric6DofConstraint(btRigidBody rbA, btRigidBody rbB, btTransform frameInA, btTransform frameInB, boolean useLinearReferenceFrameA)|6自由度关节构造器，rbA和rbB为两个刚体，frameInA和frameInB分别为从约束位置到刚体质心位置的变换，useLinearReferenceFrameA表示两个刚体与两个约束之间的对应关系，为true时rbA对应frameInA，为false时交叉对应|
@@ -290,3 +335,10 @@ A non-official ammo.js documentation
 |seAngularUpperLimit ( btVector3 angularUpper)|设置关节3个转动自由度距离的上限|
 |setAngularLowerLimit ( btVector3 angularLower)|设置关节3个转动自由度距离的下限|
 |getAngular(int axis_index)|获取指定轴的旋转角度，基于欧拉角的计算方法|
+
+# 三、回调
+|  ||
+|:--|:--|
+|ConcreteContactResultCallback|回调函数|
+|方法|含义|
+|addSingleResult|调用回调函数一次并返回一组数据|
