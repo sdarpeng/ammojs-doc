@@ -14,4 +14,4 @@
 8、然后，你就可以在任何时候都获得鼠标光标在屏幕坐标系下移动的3D空间转换数据，而无论鼠标所指向的地方是否有Object3D对象；  
 9、将获得的空间数据copy给Kinematic对象（需同时修改渲染用的ObjThree 和动力学用的ObjPhysics）；  
 10、还有一个细节，你肯定不希望你在拖动刚体的时候，OrbitControl还跟着转个不停，因此，你需要给container注入pointerdown、pointermove、pointerup3个事件监听指令，当pointerdown的时候，你需要立即保存OrbitControl的状态(saveState)，然后使其无效（enabled =false），然后在鼠标取消拾取敢提的时候（onpointerup），再使OrbitControl重新生效。  
-11、在pointerup的时候，销毁为了拾取刚体而创建的kinematic刚体。
+11、在pointerup的时候，销毁为了拾取刚体而创建的kinematic刚体和约束(constraint)。
