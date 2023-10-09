@@ -433,6 +433,7 @@ the items which signed * means it was updated by me and needs to be checked agai
 -创建一个6dofconstraint或者p2pconstraint，用来连接新创建的kinematicBody和射线穿透的rigidBody/SoftBody；  
 2）、onmousemove()  
 -获取鼠标的更新位置；  
+-通过math/plane来更新射线击中点以获取鼠标在3D空间的正确位置映射；  
 -修改kinematicBody的位置；  
 3）、onmouseup()  
 -销毁刚刚创建的constraint；  
