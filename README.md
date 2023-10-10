@@ -253,8 +253,8 @@ the items which signed * means it was updated by me and needs to be checked agai
 |*removeAnchor|不好意思，当前版本没有提供这个接口|
 |get_m_cfg()||
 |*set_collisions(0x11)|设置SoftBody的碰撞掩码？|
-|set_viterations (int)||
-|set_piterations (int)||
+|set_viterations (int)|position iteration位置迭代|
+|set_piterations (int)|velocity iteration速度迭代|
 |set_kDF ( float )|friction|
 |set_kDP ( float )|damping|
 |set_kPR ( float )|pressure|
