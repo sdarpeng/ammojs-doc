@@ -262,7 +262,8 @@ the items which signed * means it was updated by me and needs to be checked agai
 |set_m_kAST ( float )|stiffness | 
 |setTotalMass ( float )||
 |get_m_nodes()|获取布料的所有粒子节点，结果为一个数组，数组对象可以用.at(i)进行访问，也可以用.size()获取数组对象个数|  
-|get_m_anchors()|获取布料的所有锚点，其结果为一个数组，数组对象可以用.at(i)进行访问，也可以用.size()获取数组对象个数|
+|get_m_anchors()|获取布料的所有锚点，其结果为一个数组，数组对象可以用.at(i)进行访问，也可以用.size()获取数组对象个数，***可以用.clear()进行清除|
+
 ## 18、btSoftBody粒子节点方法
 |  ||
 |:--|:--|
