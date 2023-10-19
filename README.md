@@ -1,4 +1,4 @@
-![image](https://github.com/sdarpeng/ammojs-doc/assets/55733077/d0463828-d7fa-4c50-9abd-b7e16a0a146b)# ammojs-doc
+# ammojs-doc
 A non-official ammo.js documentation
 forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html)
 
