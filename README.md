@@ -1,4 +1,4 @@
-# ammojs-doc
+![image](https://github.com/sdarpeng/ammojs-doc/assets/55733077/d0463828-d7fa-4c50-9abd-b7e16a0a146b)# ammojs-doc
 A non-official ammo.js documentation
 forked from [zhaogong](http://www.dwenzhao.cn/profession/netbuild/ammoegine.html)
 
@@ -271,7 +271,11 @@ the items which signed * means it was updated by me and needs to be checked agai
 |at( int )|访问某个编号的粒子节点|
 |get_m_x()|获取某个布料粒子节点的位置|
 |get_m_n()|获取某个布料粒子节点的法向|
-|get_m_v()|获取某个布料粒子节点的速度|
+|get_m_v()|获取某个布料粒子节点的速度|  
+|get_m_area()|**|  
+|get_m_im()|**|  
+|get_m_f()|**|  
+|get_m_q()|**|  
 
 # 二、关节：
 关节是两个物体之间的约束，关节的父类为btTypedConstraint类，其他关节都继承自该类，其封装了具体关节的共用方法。
