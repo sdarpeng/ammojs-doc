@@ -258,9 +258,9 @@ the items which signed * means it was updated by me and needs to be checked agai
 |set_kDF ( float )|friction|
 |set_kDP ( float )|damping|
 |set_kPR ( float )|pressure|
-|set_m_kLST ( float )|stiffness | 
-|set_m_kAST ( float )|stiffness | 
-|setTotalMass ( float )||
+|set_m_kLST ( float )|线性刚度系数，范围为0~1 | 
+|set_m_kAST ( float )|面积/角刚度系数，范围为0~1 | 
+|setTotalMass ( float ，bool fromfaces=false )|设置质量|
 |get_m_nodes()|获取布料的所有粒子节点，结果为一个数组，数组对象可以用.at(i)进行访问，也可以用.size()获取数组对象个数|  
 |get_m_anchors()|获取布料的所有锚点，其结果为一个数组，数组对象可以用.at(i)进行访问，也可以用.size()获取数组对象个数，***可以用.clear()进行清除|
 
