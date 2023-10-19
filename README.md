@@ -428,7 +428,20 @@ the items which signed * means it was updated by me and needs to be checked agai
 |*set_m_closestHitFraction( float )|设置射线折射率？|
 |*set_m_collisionObject(null)|???|
 
-# 四、一些开发思路
+
+# 四、碰撞
+| ||  
+|:--|:--|  
+|CollisionFilterGroups |
+    DefaultFilter = 1,
+		StaticFilter = 2,
+		KinematicFilter = 4,
+		DebrisFilter = 8,
+		SensorTrigger = 16,
+		CharacterFilter = 32,
+		AllFilter = -1|  
+  
+# 五、一些开发思路
 ## 1、鼠标拾取刚体效果的实现方案
 常规的rigidBody或者softBody是只受到冲量影响，因此是不能被直接修改位置的。要实现鼠标拾取的效果，可按照如下的思路：  
 1）、onmousedown()  
