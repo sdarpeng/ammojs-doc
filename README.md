@@ -117,7 +117,7 @@ the items which signed * means it was updated by me and needs to be checked agai
 |btSoftRigidDynamicsWorld ( btbtDispatcher dispatcher, btBroadphaseInterface pairCache,btConstraintSolver constraintSolver, btCollisionConfiguration conf, btSoftBodySolver softBodySolver)|离散物理世界类构造器，dispatcher为碰撞检测算法分配器引用，pairCache为碰撞粗测算法接口，constraintSolver为约束解决器引用，conf为碰撞检测配置信息|
 |2）方法：||
 |方法|含义|
-|addSoftBody(btSoftBody body)|向物理世界添加物体，body为指向软体的引用|
+|addSoftBody(body: btSoftBody, collisionFilterGroup: CollisionFilterGroups, collisionFilterMask: CollisionFilterGroups)|向物理世界添加物体，body为指向软体的引用|
 |removeSoftBody(btSoftBody body)|从物理世界删除指定软体|
 ## 7. btCollisionShape类：碰撞形状类
 该类封装了一些判断碰撞形状类型的方法，所有碰撞形状都直接或间接继承自此类。
