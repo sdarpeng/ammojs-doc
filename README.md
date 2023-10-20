@@ -297,13 +297,13 @@ the items which signed * means it was updated by me and needs to be checked agai
 
 关于自碰撞，原本在get_m_cfg()后，通过get_m_cfg.set_collisions( 参数 )，将参数填写为0x0040就应该能实现自碰撞，但是不知道为何不生效。这里如果不修改，默认值是(0x0001)。
 
-|0x000f|Rigid versus soft mask刚性遮罩与柔性遮罩|  
-|0x0001|SDF based rigid vs soft基于SDF的刚性与柔性|  
-|0x0002 |Cluster vs convex rigid vs soft簇与凸刚性与软性|  
-|0x0030|Rigid versus soft mask刚性遮罩与柔性遮罩|  
-|0x0010|Vertex vs face soft vs soft handling顶点与面部柔软与柔软处理|  
-|0x0020 |Cluster vs cluster soft vs soft handling群集与群集软处理与软处理|  
-|0x0040 |Cluster soft body self collision集群柔体自碰撞|  
+|0x000f|Rigid versus soft mask刚性遮罩与柔性遮罩| 
+|0x0001|SDF based rigid vs soft基于SDF的刚性与柔性|   
+|0x0002|Cluster vs convex rigid vs soft簇与凸刚性与软性|    
+|0x0030|Rigid versus soft mask刚性遮罩与柔性遮罩|    
+|0x0010|Vertex vs face soft vs soft handling顶点与面部柔软与柔软处理|   
+|0x0020|Cluster vs cluster soft vs soft handling群集与群集软处理与软处理|    
+|0x0040|Cluster soft body self collision集群柔体自碰撞|   
 
 
 ## 18、btSoftBody粒子节点方法
