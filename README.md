@@ -266,6 +266,9 @@ the items which signed * means it was updated by me and needs to be checked agai
 |generateClusters(int k,int maxiterations=8192)|创建簇，貌似跟后续的簇碰撞有关系|
 
 对于get_m_cfg()后的若干参数设置及其含义，如下统一解释。  
+|  ||  
+|:--|:--|  
+|方法|含义|  
 | get_m_cfg().kDF|dynamicFriction 动态摩擦力|  
 | get_m_cfg().kVCF|baum garte 鲍姆加特|  
 | get_m_cfg().kPR|pressure 压力|  
@@ -296,7 +299,9 @@ the items which signed * means it was updated by me and needs to be checked agai
 
 
 关于自碰撞，原本在get_m_cfg()后，通过get_m_cfg.set_collisions( 参数 )，将参数填写为0x0040就应该能实现自碰撞，但是不知道为何不生效。这里如果不修改，默认值是(0x0001)。
-
+|  ||  
+|:--|:--|  
+|方法|含义|  
 |0x000f|Rigid versus soft mask刚性遮罩与柔性遮罩| 
 |0x0001|SDF based rigid vs soft基于SDF的刚性与柔性|   
 |0x0002|Cluster vs convex rigid vs soft簇与凸刚性与软性|    
