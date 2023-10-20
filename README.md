@@ -266,33 +266,45 @@ the items which signed * means it was updated by me and needs to be checked agai
 |generateClusters(int k,int maxiterations=8192)|创建簇，貌似跟后续的簇碰撞有关系|
 
 对于get_m_cfg()后的若干参数设置及其含义，如下统一解释。  
-| get_m_cfg().kDF|dynamicFriction 动态摩擦力|
-| get_m_cfg().kVCF|baum garte 鲍姆加特|
-| get_m_cfg().kPR|pressure 压力|
-| et_m_cfg().aeromodel|aeroModel 航空模型|
-| get_m_cfg().kLF|lift 举起|
-| get_m_cfg().kDG|drag 拖曳|
-| get_m_cfg().piterations|position Iterations 定位迭代次数|
-| get_m_cfg().diterations|drift Iterations 漂移迭代|
-| get_m_cfg().citerations|cluster Iterations 集群迭代次数|
-| get_m_cfg().viterations|velocity Iterations 速度迭代|
-| get_m_cfg().maxvolume|max Volume 最大音量|
-| get_m_cfg().kDP|damping 阻尼|
-| get_m_cfg().kMT|pose Match 姿势匹配|
-| get_m_cfg().collisions|collisionFlags 碰撞标志|
-| get_m_cfg().kVC|volume 体积|
-| get_m_cfg().kCHR|rigidContactHardness 刚度接触硬度|
-| get_m_cfg().kKHR|kineticContactHardness 动力学接触硬度|
-| get_m_cfg().kSHR|softContactHardness 软触点硬度|
-| get_m_cfg().kAHR|anchorHardness anchor硬度|
-| get_m_cfg().timescale|timeScale 时间刻度|
-| get_m_cfg().maxvolume|maxVolume 最大体积|
-| get_m_cfg().kSRHR_CL|soft Rigid Cluster Hardness 软硬簇硬度|
-| get_m_cfg().kSKHR_CL|soft Kinetic Cluster Hardness 软动力学簇硬度|
-| get_m_cfg().kSSHR_CL|soft Soft Cluster Hardness 软-软簇硬度|
-| get_m_cfg().kSR_SPLT_CL|soft Rigid Cluster Impulse Split 软刚性簇脉冲分裂|
-| get_m_cfg().kSK_SPLT_CL|soft Kinetic Cluster Impulse Split 软动力学簇脉冲分裂|
-| get_m_cfg().kSS_SPLT_CL|soft Soft Cluster Impulse Split 软-软簇脉冲分裂|
+| get_m_cfg().kDF|dynamicFriction 动态摩擦力|  
+| get_m_cfg().kVCF|baum garte 鲍姆加特|  
+| get_m_cfg().kPR|pressure 压力|  
+| et_m_cfg().aeromodel|aeroModel 航空模型|  
+| get_m_cfg().kLF|lift 举起|  
+| get_m_cfg().kDG|drag 拖曳|  
+| get_m_cfg().piterations|position Iterations 定位迭代次数|  
+| get_m_cfg().diterations|drift Iterations 漂移迭代|  
+| get_m_cfg().citerations|cluster Iterations 集群迭代次数|  
+| get_m_cfg().viterations|velocity Iterations 速度迭代|  
+| get_m_cfg().maxvolume|max Volume 最大音量|  
+| get_m_cfg().kDP|damping 阻尼|  
+| get_m_cfg().kMT|pose Match 姿势匹配|  
+| get_m_cfg().collisions|collisionFlags 碰撞标志|  
+| get_m_cfg().kVC|volume 体积|  
+| get_m_cfg().kCHR|rigidContactHardness 刚度接触硬度|  
+| get_m_cfg().kKHR|kineticContactHardness 动力学接触硬度|  
+| get_m_cfg().kSHR|softContactHardness 软触点硬度|  
+| get_m_cfg().kAHR|anchorHardness anchor硬度|  
+| get_m_cfg().timescale|timeScale 时间刻度|  
+| get_m_cfg().maxvolume|maxVolume 最大体积|  
+| get_m_cfg().kSRHR_CL|soft Rigid Cluster Hardness 软硬簇硬度|  
+| get_m_cfg().kSKHR_CL|soft Kinetic Cluster Hardness 软动力学簇硬度|  
+| get_m_cfg().kSSHR_CL|soft Soft Cluster Hardness 软-软簇硬度|  
+| get_m_cfg().kSR_SPLT_CL|soft Rigid Cluster Impulse Split 软刚性簇脉冲分裂|  
+| get_m_cfg().kSK_SPLT_CL|soft Kinetic Cluster Impulse Split 软动力学簇脉冲分裂|  
+| get_m_cfg().kSS_SPLT_CL|soft Soft Cluster Impulse Split 软-软簇脉冲分裂|  
+
+
+关于自碰撞，原本在get_m_cfg()后，通过get_m_cfg.set_collisions( 参数 )，将参数填写为0x0040就应该能实现自碰撞，但是不知道为何不生效。这里如果不修改，默认值是(0x0001)。
+
+|0x000f|Rigid versus soft mask刚性遮罩与柔性遮罩|  
+|0x0001|SDF based rigid vs soft基于SDF的刚性与柔性|  
+|0x0002 |Cluster vs convex rigid vs soft簇与凸刚性与软性|  
+|0x0030|Rigid versus soft mask刚性遮罩与柔性遮罩|  
+|0x0010|Vertex vs face soft vs soft handling顶点与面部柔软与柔软处理|  
+|0x0020 |Cluster vs cluster soft vs soft handling群集与群集软处理与软处理|  
+|0x0040 |Cluster soft body self collision集群柔体自碰撞|  
+
 
 ## 18、btSoftBody粒子节点方法
 |  ||
